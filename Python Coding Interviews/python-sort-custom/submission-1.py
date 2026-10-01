@@ -1,0 +1,22 @@
+from typing import List
+
+# key parameter doesn't accept a value -> rather it accepts a FUNCTIOn that returns a value to be used for sorting
+# so function can apply to every element in the set
+def get_word_len(word:str) -> int:
+    return len(word)
+
+
+def sort_words(words: List[str]) -> List[str]:
+    words.sort(key=get_word_len, reverse=True)
+    return words
+
+
+def sort_numbers(numbers: List[int]) -> List[int]:
+    numbers.sort(key=abs)
+    return numbers
+
+
+# do not modify below this line
+print(sort_words(["cherry", "apple", "blueberry", "banana", "watermelon", "zucchini", "kiwi", "pear"]))
+
+print(sort_numbers([1, -5, -3, 2, 4, 11, -19, 9, -2, 5, -6, 7, -4, 2, 6]))
